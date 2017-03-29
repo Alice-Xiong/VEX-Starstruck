@@ -46,6 +46,8 @@ task main()
 	displayLCDPos(1, 8);
 	displayNextLCDString("ROBOTICS");
 	wait1Msec(1000);
+  clearLCDLine(0);
+	clearLCDLine(1);
 	displayLCDPos(0, 5);
 	displayNextLCDString("98549X");
 	displayLCDPos(1, 0);

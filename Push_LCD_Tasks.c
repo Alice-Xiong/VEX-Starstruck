@@ -27,15 +27,11 @@ task tAutoSelection
 		case 1:
 			if (nLastLCDBtn != nLCDButtons && nAutoModes > 0)
 				nAutoModes--;
-			else if (nLastLCDBtn != nLCDButtons && nAutoModes == 0)
-				nAutoModes = Num_Of_Auto_Modes;
 			break;
 
 		case 4:
 			if (nLastLCDBtn != nLCDButtons && nAutoModes < Num_Of_Auto_Modes)
 				nAutoModes++;
-			else if (nLastLCDBtn != nLCDButtons && nAutoModes == Num_Of_Auto_Modes)
-				nAutoModes = 0;
 			break;
 
 		default:
@@ -50,16 +46,16 @@ task tAutoSelection
 
 task tDriverLCD()
 {
-  while (true)
-  {
-    bLCDBacklight = true;
+	while (true)
+	{
+		bLCDBacklight = true;
 		clearLCDLine(0);
 		clearLCDLine(1);
 		displayLCDPos(0,0);
 		displayNextLCDString("Battery:");
-		displayLCDPos(1,0);
+		displayLCDPos(0,9);
 		displayNextLCDNumber(nAvgBatteryLevel);
 
 		wait1Msec(25);
-  }
+	}
 }
